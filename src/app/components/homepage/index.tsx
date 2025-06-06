@@ -5,10 +5,9 @@ export default function Homepage() {
     return (
         <div className="">
             <div className="md:px-14 px-4 mx-auto">
-                <Navbar/>
+                <Navbar />
                 <HeroSection />
             </div>
-
         </div>
     )
 }
