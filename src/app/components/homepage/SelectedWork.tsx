@@ -1,4 +1,15 @@
-const projects = [
+type Project = {
+  title: string;
+  subtitle: string;
+  tags: string[];
+  gradient: string;
+  content: JSX.Element;
+  textColor?: string;
+  textColorFaded?: string;
+  borderColor?: string;
+};
+
+const projects: Project[] = [
   {
   title: "Leo Design Solution Website",
   subtitle: "Showcasing Creativity and Design Excellence",
