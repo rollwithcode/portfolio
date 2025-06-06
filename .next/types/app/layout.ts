@@ -1,4 +1,4 @@
-// File: /Volumes/Coding/RWC/src/app/layout.tsx
+// File: D:\Roll with Code\portfolio\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

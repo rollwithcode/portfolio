@@ -14,3 +14,30 @@
 body {
   font-family: 'chilax', sans-serif;
 }
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.5); }
+  }
+
+  /* Random positions */
+  .star:nth-child(1)  { top: 5%;  left: 10%;  animation-delay: 0s; }
+  .star:nth-child(2)  { top: 20%; left: 50%;  animation-delay: 1s; }
+  .star:nth-child(3)  { top: 30%; left: 70%;  animation-delay: 0.5s; }
+  .star:nth-child(4)  { top: 80%; left: 25%;  animation-delay: 1.5s; }
+  .star:nth-child(5)  { top: 65%; left: 85%;  animation-delay: 2s; }
+  .star:nth-child(6)  { top: 40%; left: 40%;  animation-delay: 1s; }
+  .star:nth-child(7)  { top: 10%; left: 90%;  animation-delay: 0.2s; }
+  .star:nth-child(8)  { top: 75%; left: 60%;  animation-delay: 1.2s; }
+  .star:nth-child(9)  { top: 55%; left: 30%;  animation-delay: 0.6s; }
+  .star:nth-child(10) { top: 50%; left: 10%;  animation-delay: 0.8s; }
+
