@@ -11,6 +11,8 @@ const config: Config = {
         extend: {
             colors: {
                 red: '#F97563',
+                textGray: "#7A7A7A",
+                lightGray: "#ffffff29"
             },
             borderRadius: {
                 '44px': '44px',
