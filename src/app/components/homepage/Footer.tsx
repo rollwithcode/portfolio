@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function HeekoFooter() {
-    const [hoveredItem, setHoveredItem] = useState(null);
+    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     return (
         <div className="bg-black min-h-screen relative overflow-hidden py-16">
