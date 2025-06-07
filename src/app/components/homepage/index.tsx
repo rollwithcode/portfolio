@@ -1,5 +1,7 @@
 import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
+import Pricing from "./Pricing";
+import Steps from "./Steps";
 import Footer from "./Footer";
 import SelectedWork from "./SelectedWork";
 
@@ -11,7 +13,8 @@ export default function Homepage() {
 
                 {/* Work on */}
                 <HeroSection />
-                
+                <Steps />
+                <Pricing />                
 
 
                 <SelectedWork />

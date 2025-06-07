@@ -4,15 +4,65 @@
 
 
 @font-face {
-  font-family: 'chilax';
-  src: url('../fonts/Chillax-Medium.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'chilax';
+    src: url('../fonts/Chillax-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 
 body {
-  font-family: 'chilax', sans-serif;
+    overflow-x: hidden;
+    font-family: 'chilax', sans-serif;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.glow-shift-anim {
+    box-sizing: content-box;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    background-image: conic-gradient(from var(--angle), transparent 50%, #F97563);
+    padding: 7px;
+    border-radius: 1rem;
+    translate: -50% -50%;
+    opacity: 0;
+}
+
+.glow-edge {
+    border: solid #F97563 3px;
+}
+
+
+.glow-edge:hover {
+    border: solid transparent 3px;
+
+    .glow-shift-anim {
+        opacity: 1;
+        animation: 1.5s glowing linear infinite;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        --angle: 0deg
+    }
+
+    100% {
+        --angle: 360deg
+    }
 }
 .star {
     position: absolute;
