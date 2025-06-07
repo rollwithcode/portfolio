@@ -8,7 +8,10 @@ export default function Homepage() {
         <div className="">
             <div className="md:px-14 py-2 px-4 mx-auto">
                 <Navbar />
+
+                {/* Work on */}
                 <HeroSection />
+
                 <SelectedWork />
                 <Footer />
             </div>
