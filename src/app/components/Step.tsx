@@ -2,6 +2,7 @@
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import StepStar from "./icons/StepStar";
 
 type StepProps = {
     number: string;
@@ -27,7 +28,7 @@ export default function Step({ number, title, description }: StepProps) {
             style={{ scale, opacity, minHeight: "120px" }}
             className="
                 w-full max-w-7xl mx-auto my-6
-                bg-black border border-gray-600 rounded-3xl lg:rounded-full
+                bg-black border border-lightGray rounded-3xl lg:rounded-full
                 px-6 py-4 lg:py-0
                 flex items-center
             "
@@ -39,7 +40,7 @@ export default function Step({ number, title, description }: StepProps) {
                     </span>
                 </div>
                 <div className="flex justify-center lg:justify-end items-center h-full">
-                    <span className="text-[3rem] md:text-[4rem] font-extrabold text-red tracking-tight select-none">
+                    <span className="text-[3rem] md:text-[4rem] font-extrabold text-green tracking-tight select-none">
                         {title}
                     </span>
                 </div>
@@ -53,16 +54,5 @@ export default function Step({ number, title, description }: StepProps) {
                 </div>
             </div>
         </motion.div>
-    );
-}
-
-function StepStar() {
-    return (
-        <svg viewBox="0 0 34 34" width={34} height={34} fill="none">
-            <path
-                d="M 16.167 33 C 15.542 29.417 13 24.917 8.167 21.292 C 5.792 19.5 3.375 18.333 1 17.833 L 1 16.083 C 5.708 14.958 10.333 11.792 13.292 7.5 C 14.792 5.333 15.75 3.208 16.167 1 L 17.917 1 C 18.625 5.208 21.875 9.875 26.292 13 C 28.458 14.542 30.708 15.583 33 16.083 L 33 17.833 C 28.375 18.792 23 22.917 20.333 27.125 C 19 29.25 18.208 31.208 17.917 33 Z"
-                fill="white"
-            />
-        </svg>
     );
 }

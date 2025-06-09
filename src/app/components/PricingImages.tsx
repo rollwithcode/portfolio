@@ -22,7 +22,7 @@ export default function AnimatedPricingImages() {
                 style={{
                     rotate: rotatePlus,
                 }}
-                className="absolute top-[40%] left-[-60px] z-10"
+                className="absolute top-[40%] left-[-110px] z-0"
             >
                 <Image src={plus} alt="" width={240} />
             </motion.div>
@@ -30,7 +30,7 @@ export default function AnimatedPricingImages() {
                 style={{
                     rotate: rotateThree,
                 }}
-                className="absolute right-[-60px] top-[20%] z-10 "
+                className="absolute right-[-120px] top-[20%] z-0"
             >
                 <Image src={three} alt="" width={240} />
             </motion.div>

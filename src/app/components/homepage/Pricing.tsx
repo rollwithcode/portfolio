@@ -17,10 +17,10 @@ const pricingOptions = [
             "Async comms",
             "Pause or cancel anytime",
         ],
-        textColor: "text-gray-400",
-        borderColor: "border-gray-500",
-        glowColor: "gray-500",
-        buttonColor: "bg-gray-500",
+        textColor: "text-green",
+        borderColor: "border-green",
+        glowColor: "green",
+        buttonColor: "bg-green",
         buttonText: "→ Book an Intro Call",
         buttonTextColor: "text-black",
     },
@@ -49,7 +49,7 @@ const pricingOptions = [
 export default function PricingPage() {
 
     return (
-        <section id="pricing" className="relative">
+        <section id="pricing" className="relative md:pt-16 pt-10">
             <AnimatedPricingImages />
             <AnimatedQuote>
                 Great businesses are built, not born.

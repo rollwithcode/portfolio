@@ -32,12 +32,14 @@ export default function Steps() {
     return (
         <section className="pt-20 pb-16 bg-black w-full min-h-screen">
             <div className="flex justify-center mb-12">
-                <div className="border border-red/80 rounded-full px-14 py-4 w-fit bg-black">
-                    <span className="text-4xl md:text-5xl text-white font-light flex items-center gap-4">
-                        HOW IT WORKS
+                    <span
+                        style={{ borderRadius: "50% / 50%" }}
+                        className="md:px-16 md:py-16 px-8 py-8 border border-lightGray flex items-center justify-center text-white md:text-4xl text-xl bg-black gap-4"
+                    >
+                        HOW IT WORKS 
                         <span className="text-3xl" role="img" aria-label="magic wand">🪄</span>
                     </span>
-                </div>
+
             </div>
             <div>
                 {stepsData.map((step, i) => (

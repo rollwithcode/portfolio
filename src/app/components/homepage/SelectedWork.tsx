@@ -1,9 +1,35 @@
-const projects = [
+"use client"
+
+import BuiltWithLoveText from "../common/BuiltWithLoveText";
+import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
+
+
+import MaleehaImage from "@/assets/maleeha.jpg"
+import LeoDesign from "@/assets/leo-design.jpg"
+import TournamentImage from "@/assets/tournament-mgmt.jpg"
+import ReceiptifyImage from "@/assets/receiptify.jpg"
+
+interface Project {
+  title: string;
+  subtitle: string;
+  gradient: string;
+  textColor?: string;
+  textColorFaded?: string;
+  borderColor?: string;
+  tags?: string[];
+  content?: React.ReactNode;
+  image: StaticImageData;
+}
+
+
+const projects: Project[] = [
   {
     title: "Leo Design Solution Website",
     subtitle: "Showcasing Creativity and Design Excellence",
     tags: ["Web Design", "UI/UX", "Responsive Design"],
-    gradient: "from-indigo-500 to-purple-700",
+    gradient: "bg-red",
+    image: LeoDesign,
     content: (
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
         <div className="bg-gray-50 rounded-xl p-4">
@@ -36,10 +62,11 @@ const projects = [
   },
 
   {
-    title: "ArtSpiree Website",
-    subtitle: "Empowering Creative Visions for Causemakers and Gamechangers",
+    title: "Maleeha website",
+    subtitle: "Portfolio website for Maleeha",
     tags: ["Web Design", "UI/UX", "Responsive Design"],
-    gradient: "from-blue-500 to-red-700",
+    gradient: "bg-red",
+    image: MaleehaImage,
     content: (
       <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
         <div className="bg-gray-50 rounded-xl p-4">
@@ -69,69 +96,28 @@ const projects = [
         </div>
       </div>
     ),
-  }
-  ,
-  // {
-  //   title: "STACKLY",
-  //   subtitle: "Stack Crypto over time",
-  //   tags: ["DESIGN SYSTEM", "UI", "BRANDING"],
-  //   gradient: "from-green-600 to-green-800",
-  //   content: (
-  //     <div className="bg-black/20 rounded-2xl p-6 backdrop-blur-sm border border-white/10 w-full max-w-sm">
-  //       <div className="bg-black rounded-xl p-4">
-  //         <div className="text-green-400 text-xl font-bold mb-4">STACKLY</div>
-  //         <div className="text-white text-sm mb-4">Stack WETH every</div>
-  //         <div className="flex gap-2 mb-4">
-  //           {["Hour", "Day", "Week", "Monthly"].map((label, i) => (
-  //             <button
-  //               key={i}
-  //               className={`px-3 py-1 rounded-full text-sm ${i === 0
-  //                 ? "bg-green-500 text-black font-medium"
-  //                 : "text-white"
-  //                 }`}
-  //             >
-  //               {label}
-  //             </button>
-  //           ))}
-  //         </div>
-  //         <div className="text-green-400 text-sm">
-  //           📈 Stacks WETH, averaging 5.41 USDC every hour for 23 days
-  //         </div>
-  //         <button className="w-full bg-green-500 text-black font-medium py-3 rounded-lg mt-4">
-  //           Stack Now
-  //         </button>
-  //       </div>
-  //     </div>
-  //   ),
-  // },
-  // {
-  //   title: "ATOMIZE",
-  //   subtitle: "Design System for Figma",
-  //   tags: ["DESIGN SYSTEM", "BRANDING"],
-  //   gradient: "from-blue-500 to-blue-700",
-  //   content: (
-  //     <div className="text-white text-center">
-  //       <div className="text-5xl font-bold mb-2 flex items-center gap-3">
-  //         <div className="w-4 h-4 bg-green-400 rounded-full"></div>
-  //         <span>ATOMIZE</span>
-  //       </div>
-  //       <div className="text-white/80 text-lg">Design System for Figma</div>
-  //     </div>
-  //   ),
-  // },
+  },
+  {
+    title: "Tournament management system",
+    subtitle: "A full-stack web app",
+    gradient: "bg-red",
+    image: TournamentImage,
+  },
+  {
+    title: "Receiptify",
+    subtitle: "A receipt maker application",
+    gradient: "bg-red",
+    image: ReceiptifyImage,
+  },
 ];
 
 export default function SelectedWork() {
   return (
-    <div className="bg-black min-h-screen py-20 px-4">
+    <div className="bg-black min-h-screen py-20 px-4 pt-40">
       {/* Header */}
       <div className="text-center mb-16">
-        <h2 className="text-red text-7xl md:text-9xl font-bold mb-2 tracking-tight">
-          Selected
-        </h2>
-        <h2 className="text-white text-7xl md:text-9xl font-bold tracking-tight">
-          WORK
-        </h2>
+        <BuiltWithLoveText />
+
         <div className="mt-12 flex justify-center">
           <div className="w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center animate-bounce">
             <svg
@@ -154,37 +140,52 @@ export default function SelectedWork() {
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projects.map((proj, i) => (
-          <div
+          <motion.div
             key={i}
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br ${proj.gradient} p-8 md:p-12 min-h-[600px] cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-2xl`}
+            whileHover={{
+              y: -10, // float up on hover
+              scale: 1.03,
+              boxShadow: "0 10px 20px rgba(0,0,0,0.25)"
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="group relative overflow-hidden bg-black cursor-pointer rounded-44px p-3"
           >
-            <div className="flex flex-col h-full">
-              {/* Tags */}
-
-
-              {/* Content */}
-              <div className="flex-1 flex items-center justify-center mb-8">
-                {proj.content}
+            <div className="border border-lightGray rounded-44px p-3">
+              <div className="flex flex-col h-full">
+                <Image
+                  src={proj.image.src}
+                  alt="artspire-image"
+                  height={400}
+                  width={500}
+                  className="rounded-[30px] h-auto w-auto"
+                />
               </div>
-
-              {/* Title + Subtitle */}
-              <div>
-                <h3
-                  className={`${proj.textColor || "text-white"
-                    } text-4xl md:text-5xl font-bold mb-2`}
-                >
-                  {proj.title}
-                </h3>
-                <p
-                  className={`${proj.textColorFaded || "text-white/80"
-                    } text-lg`}
-                >
-                  {proj.subtitle}
-                </p>
-              </div>
-
             </div>
-            <div className="flex flex-wrap gap-2 mb-6">
+
+            <div className="pt-6 px-4">
+              <h3 className={`${proj.textColor || "text-white"} text-2xl md:text-3xl font-bold mb-2`}>
+                {proj.title}
+              </h3>
+              <p className={`${proj.textColorFaded || "text-textGray/80"} text-lg`}>
+                {proj.subtitle}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+
+      </div>
+    </div>
+  );
+}
+
+
+{/* Content */ }
+{/* <div className="flex-1 flex items-center justify-center mb-8">
+                {proj.content}
+              </div> */}
+
+
+{/* <div className="flex flex-wrap gap-2 mb-6">
               {proj.tags.map((tag, j) => (
                 <span
                   key={j}
@@ -194,10 +195,4 @@ export default function SelectedWork() {
                   {tag}
                 </span>
               ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+            </div> */}

@@ -12,10 +12,14 @@ const config: Config = {
             colors: {
                 red: '#F97563',
                 textGray: "#7A7A7A",
-                lightGray: "#ffffff29"
+                lightGray: "#ffffff29",
+                green: "#99FE32",
             },
             borderRadius: {
                 '44px': '44px',
+                '80px': '80px',
+                '48px': '48px',
+                '30px': '30px',
             },
             boxShadow: {
                 'lime-glow': '0 0 48px 8px #84cc16',
