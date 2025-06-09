@@ -10,6 +10,7 @@ export default function AnimatedPricingImages() {
     const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["start end", "end start"],
+        
     });
 
     const rotatePlus = useTransform(scrollYProgress, [0.3, 0.7], [0, -48]);
